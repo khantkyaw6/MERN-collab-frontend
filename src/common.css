@@ -1,0 +1,28 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    width: 800px;
+}
+.buttonColor {
+    background-color: black;
+    width: 100% !important;
+    color:white;
+}
+
+Form {
+   width: 400px;
+   padding:50px;
+   border: 1px solid #ccc;
+   border-radius: 5%;
+}
+h1{
+    text-align: center;
+}
