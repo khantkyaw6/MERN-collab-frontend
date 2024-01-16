@@ -1,7 +1,8 @@
 import React from 'react';
 import { LaptopOutlined, NotificationOutlined, UserOutlined } from '@ant-design/icons';
-import { Breadcrumb, Layout, Menu, theme } from 'antd';
+import { Layout, Menu, theme, Card, Row, Col } from 'antd';
 const { Header, Content, Sider } = Layout;
+const { Meta } = Card;
 const items = new Array(3).fill(null).map((_, index) => ({
     key: String(index + 1),
     label: `nav ${index + 1}`,
@@ -26,10 +27,10 @@ const Dashboard = () => {
         token: { colorBgContainer, borderRadiusLG },
     } = theme.useToken();
     return (
-        <Layout>
+        <Layout  style={{ minHeight: '100vh' }}>
             <Header
                 style={{
-                    position: 'sticky',
+                    position: 'fixed',
                     top: 0,
                     zIndex: 1,
                     width: '100%',
@@ -49,11 +50,12 @@ const Dashboard = () => {
                     }}
                 />
             </Header>
-            <Layout >
+            <Layout  style={{ marginTop: 64 }}>
                 <Sider
                     width={200}
                     style={{
                         overflow: 'auto',
+                        height: 'calc(100vh - 64px)',
                         position: 'sticky',
                         left: 0,
                         top: 0,
@@ -66,30 +68,163 @@ const Dashboard = () => {
                         defaultSelectedKeys={['1']}
                         defaultOpenKeys={['sub1']}
                         style={{
+                            height: '100%',
                             borderRight: 0,
                         }}
                         items={items2}
                     />
                 </Sider>
-                {/* <Layout
-                    style={{
-                        padding: '0 24px 24px',
-                    }}
-                > */}
 
                 <Content
                     style={{
                         padding: 24,
                         margin: 0,
-                        minHeight: `calc(100vh -16px)`,
+                        minHeight: 280,
+                        overflow: 'auto',
+                        height: 'calc(100vh - 64px)',
+                        position: 'sticky',
                         background: colorBgContainer,
                         borderRadius: borderRadiusLG,
                     }}
                 >
-                    Content
+                    <Row gutter={16} >
+                        <Col span={8} style={{marginBottom:"1%"}}>
+                            <Card
+                                style={{ width: 200}}
+                                cover={ <img alt="example" src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" /> }
+                            >
+                                <Meta
+                                    title="Card title"
+                                    description="This is the description"
+                                />
+                            </Card>
+                        </Col>
+                        <Col span={8} style={{marginBottom:"1%"}}>
+                            <Card
+                                style={{ width: 200}}
+                                cover={ <img alt="example" src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" /> }
+                            >
+                                <Meta
+                                    title="Card title"
+                                    description="This is the description"
+                                />
+                            </Card>
+                        </Col>
+                        <Col span={8} style={{marginBottom:"1%"}}>
+                            <Card
+                                style={{ width: 200}}
+                                cover={ <img alt="example" src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" /> }
+                            >
+                                <Meta
+                                    title="Card title"
+                                    description="This is the description"
+                                />
+                            </Card>
+                        </Col>
+                        <Col span={8} style={{marginBottom:"1%"}}>
+                            <Card
+                                style={{ width: 200}}
+                                cover={ <img alt="example" src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" /> }
+                            >
+                                <Meta
+                                    title="Card title"
+                                    description="This is the description"
+                                />
+                            </Card>
+                        </Col>
+                        <Col span={8} style={{marginBottom:"1%"}}>
+                            <Card
+                                style={{ width: 200}}
+                                cover={ <img alt="example" src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" /> }
+                            >
+                                <Meta
+                                    title="Card title"
+                                    description="This is the description"
+                                />
+                            </Card>
+                        </Col>
+                        <Col span={8} style={{marginBottom:"1%"}}>
+                            <Card
+                                style={{ width: 200}}
+                                cover={ <img alt="example" src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" /> }
+                            >
+                                <Meta
+                                    title="Card title"
+                                    description="This is the description"
+                                />
+                            </Card>
+                        </Col>
+                        <Col span={8} style={{marginBottom:"1%"}}>
+                            <Card
+                                style={{ width: 200}}
+                                cover={ <img alt="example" src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" /> }
+                            >
+                                <Meta
+                                    title="Card title"
+                                    description="This is the description"
+                                />
+                            </Card>
+                        </Col>
+                        <Col span={8} style={{marginBottom:"1%"}}>
+                            <Card
+                                style={{ width: 200}}
+                                cover={ <img alt="example" src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" /> }
+                            >
+                                <Meta
+                                    title="Card title"
+                                    description="This is the description"
+                                />
+                            </Card>
+                        </Col>
+                        <Col span={8} style={{marginBottom:"1%"}}>
+                            <Card
+                                style={{ width: 200}}
+                                cover={ <img alt="example" src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" /> }
+                            >
+                                <Meta
+                                    title="Card title"
+                                    description="This is the description"
+                                />
+                            </Card>
+                        </Col>
+                        <Col span={8} style={{marginBottom:"1%"}}>
+                            <Card
+                                style={{ width: 200}}
+                                cover={ <img alt="example" src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" /> }
+                            >
+                                <Meta
+                                    title="Card title"
+                                    description="This is the description"
+                                />
+                            </Card>
+                        </Col>
+                        <Col span={8} style={{marginBottom:"1%"}}>
+                            <Card
+                                style={{ width: 200}}
+                                cover={ <img alt="example" src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" /> }
+                            >
+                                <Meta
+                                    title="Card title"
+                                    description="This is the description"
+                                />
+                            </Card>
+                        </Col>
+                        <Col span={8} style={{marginBottom:"1%"}}>
+                            <Card
+                                style={{ width: 200}}
+                                cover={ <img alt="example" src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" /> }
+                            >
+                                <Meta
+                                    title="Card title"
+                                    description="This is the description"
+                                />
+                            </Card>
+                        </Col>
+                    </Row>
+
                 </Content>
                 <Sider
-                    width={500}
+                    width={450}
                     style={{
                         background: colorBgContainer,
                     }}
@@ -105,7 +240,6 @@ const Dashboard = () => {
                         items={items2}
                     />
                 </Sider>
-                {/* </Layout> */}
             </Layout>
         </Layout>
     );
