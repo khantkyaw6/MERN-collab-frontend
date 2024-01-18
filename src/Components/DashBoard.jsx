@@ -1,6 +1,6 @@
 import React from 'react';
-import { LaptopOutlined, NotificationOutlined, UserOutlined } from '@ant-design/icons';
-import { Layout, Menu, theme, Card, Row, Col, Space, List } from 'antd';
+import { LaptopOutlined, MinusOutlined, PlusOutlined } from '@ant-design/icons';
+import { Layout, Menu, theme, Card, Row, Col, Space, List, Button } from 'antd';
 import foodImage from '../images/food.jpg'
 const { Header, Content, Sider } = Layout;
 const { Meta } = Card;
@@ -301,65 +301,90 @@ const Dashboard = () => {
                         background: colorBgContainer,
                     }}
                 >
-                    {/* <List
-                        dataSource={products}
-                        renderItem={(product) => (
-                            <List.Item>
-                                <div>
-                                    
-                                </div>
-                                <Space>
-                                    <span>{product.name}</span>
-                                    <InputNumber
-                                        min={0}
-                                        value={product.quantity}
-                                        onChange={(value) => handleQuantityChange(product.id, value)}
-                                    />
-                                </Space>
-                            </List.Item>
-                        )}
-                        
-                    /> */}
+
                     <List style={{
-                        border: '1px solid #ccc', margin: "1%", overflow: 'auto',
+                        margin: "1%",
+                        overflow: 'auto',
+
                         height: '60vh',
                         position: 'sticky'
                     }}>
-                        <Space direction="horizontal"  >
+                        <h1 style={{ borderBottom: "1px solid #ccc" }}>Order List</h1>
+                        <div style={{ borderBottom: '1px solid #ccc' }}>
+                            <h4 style={{ textAlign: "left", margin: 0, padding: "0px 5px" }}>Korean Product</h4>
+                            <Space direction="horizontal" style={{
+                                margin: "2%", overflow: 'auto', display: "flex", justifyContent: "space-between"
+                            }} >
 
-                            <div>
-                                <div>
-                                    <span>Korean</span>
+                                <div >
+                                    <div >
+                                        <span>120 MMK</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div >
-                                <div>
-                                    <span>Korean</span>
-                                </div>
-                            </div>
+                                <div >
+                                    <div>
 
-                        </Space>
+                                        <Button type="primary" shape="circle" icon={<PlusOutlined />} size="small" />
+                                        <span > 1 </span>
+                                        <Button type="primary" shape="circle" icon={<MinusOutlined />} size="small" />
+
+                                    </div>
+                                </div>
+
+                            </Space>
+                        </div>
 
                     </List>
                     <List style={{
-                        margin: "1%"
-                        
+                        margin: "1%",
+                        borderTop: "1px solid #ccc"
                     }}>
-                        <Space >
+                        <Space direction="horizontal" style={{
+                            margin: "2%", overflow: 'auto', display: "flex", justifyContent: "space-between"
+                        }} >
 
-                            <div>
-                                <div>
-                                    <span>Korean</span>
+                            <div >
+                                <div >
+                                    <span>SubTotal</span>
                                 </div>
                             </div>
                             <div >
                                 <div>
-                                    <span>Korean</span>
+                                    <span >1234 MMK</span>
                                 </div>
                             </div>
-
                         </Space>
-                        
+                        <Space direction="horizontal" style={{
+                            margin: "2%", overflow: 'auto', display: "flex", justifyContent: "space-between"
+                        }} >
+
+                            <div >
+                                <div >
+                                    <span>Taxes</span>
+                                </div>
+                            </div>
+                            <div >
+                                <div>
+                                    <span >1234 MMK</span>
+                                </div>
+                            </div>
+                        </Space>
+                        <Space direction="horizontal" style={{
+                            margin: "2%", overflow: 'auto', display: "flex", justifyContent: "space-between"
+                        }} >
+
+                            <h1>Total</h1>
+                                <div>
+                                    <span >1234 MMK</span>
+                                </div>
+                        </Space>
+                        <div>
+                        <Button>Buy</Button>
+                        </div>
+                        <div>
+                        <Button>Buy</Button>
+                        </div>
+                        <Button>Buy</Button>
 
                     </List>
                 </Sider>
