@@ -1,17 +1,20 @@
 import React from 'react';
 import { LaptopOutlined, MinusOutlined, PlusOutlined } from '@ant-design/icons';
-import { Layout, Menu, theme, Card, Row, Col, Space, List, Button } from 'antd';
+import { Layout, Menu, theme, Card, Row, Col, Space, List, Button, Typography } from 'antd';
 import foodImage from '../images/food.jpg'
+import { Link } from 'react-router-dom'
 const { Header, Content, Sider } = Layout;
 const { Meta } = Card;
+const { Title } = Typography;
 
-const items = new Array(3).fill(null).map((_, index) => ({
-    key: String(index + 1),
-    label: `nav ${index + 1}`,
-}));
+// const items = new Array(3).fill(null).map((_, index) => ({
+//     key: String(index + 1),
+//     label: `nav ${index + 1}`,
+// }));
+const items = [{}]
 const items2 = [
     {
-        key: `sub1`,
+        key: `sub11`,
         label: "MainDish",
         children: [
             {
@@ -56,19 +59,45 @@ const Dashboard = () => {
                     width: '100%',
                     display: 'flex',
                     alignItems: 'center',
+                    justifyItems: 'between',
+                    padding: "0 10px"
                 }}
             >
-                <div className="demo-logo" />
+                {/* <div > */}
+                <Title style={{ flex: 1, textAlign: "left", paddingBottom: "10px" }} type="success" strong italic >Dee Food</Title>
+
                 <Menu
                     theme="dark"
                     mode="horizontal"
-                    defaultSelectedKeys={['2']}
-                    items={items}
                     style={{
-                        flex: 1,
-                        minWidth: 0,
+                        display: "flex",
+                        justifyContent: "flex-end",
+                        width: "50%"
                     }}
-                />
+                // onClick={handleMenuClick}
+                >
+                    <Menu.Item style={{ background: "none"}}>
+                        <Link to="/" style={{ textDecoration: "none" }}>
+                            Home
+                        </Link>
+                    </Menu.Item>
+                    <Menu.Item>
+                        <Link to="/login" style={{ textDecoration: "none" }}>
+                            LogIn
+                        </Link>
+                    </Menu.Item>
+                    <Menu.Item>
+                        <Link to="/SignIn" style={{ textDecoration: "none" }}>
+                            SignUp
+                        </Link>
+                    </Menu.Item>
+                    {/*<Menu.Item key="Contact">
+                        <a href="#contact" style={{ textDecoration: "none", color: "inherit" }}>
+                            Contact
+                        </a>
+                    </Menu.Item> */}
+                </Menu>
+                {/* </div> */}
             </Header>
             <Layout style={{ marginTop: 64 }}>
                 <Sider
@@ -86,7 +115,7 @@ const Dashboard = () => {
                     <Menu
                         mode="inline"
                         defaultSelectedKeys={['1']}
-                        defaultOpenKeys={['sub1']}
+                        defaultOpenKeys={['sub11']}
                         style={{
                             height: '100%',
                             borderRight: 0,
@@ -108,7 +137,7 @@ const Dashboard = () => {
                     }}
                 >
                     <Row gutter={16} >
-                        <Col span={8} style={{ marginBottom: "1%" }}>
+                        <Col style={{ marginBottom: "1%" }}>
                             <Card
                                 style={{ width: 200 }}
                                 cover={<img alt="example" src={foodImage} />}
@@ -120,7 +149,7 @@ const Dashboard = () => {
                                 />
                             </Card>
                         </Col>
-                        <Col span={8} style={{ marginBottom: "1%" }}>
+                        <Col style={{ marginBottom: "1%" }}>
                             <Card
                                 style={{ width: 200 }}
                                 cover={<img alt="example" src={foodImage} />}
@@ -132,7 +161,7 @@ const Dashboard = () => {
                                 />
                             </Card>
                         </Col>
-                        <Col span={8} style={{ marginBottom: "1%" }}>
+                        <Col style={{ marginBottom: "1%" }}>
                             <Card
                                 style={{ width: 200 }}
                                 cover={<img alt="example" src={foodImage} />}
@@ -144,7 +173,7 @@ const Dashboard = () => {
                                 />
                             </Card>
                         </Col>
-                        <Col span={8} style={{ marginBottom: "1%" }}>
+                        <Col style={{ marginBottom: "1%" }}>
                             <Card
                                 style={{ width: 200 }}
                                 cover={<img alt="example" src={foodImage} />}
@@ -156,7 +185,7 @@ const Dashboard = () => {
                                 />
                             </Card>
                         </Col>
-                        <Col span={8} style={{ marginBottom: "1%" }}>
+                        <Col style={{ marginBottom: "1%" }}>
                             <Card
                                 style={{ width: 200 }}
                                 cover={<img alt="example" src={foodImage} />}
@@ -168,7 +197,7 @@ const Dashboard = () => {
                                 />
                             </Card>
                         </Col>
-                        <Col span={8} style={{ marginBottom: "1%" }}>
+                        <Col style={{ marginBottom: "1%" }}>
                             <Card
                                 style={{ width: 200 }}
                                 cover={<img alt="example" src={foodImage} />}
@@ -180,7 +209,7 @@ const Dashboard = () => {
                                 />
                             </Card>
                         </Col>
-                        <Col span={8} style={{ marginBottom: "1%" }}>
+                        <Col style={{ marginBottom: "1%" }}>
                             <Card
                                 style={{ width: 200 }}
                                 cover={<img alt="example" src={foodImage} />}
@@ -192,7 +221,7 @@ const Dashboard = () => {
                                 />
                             </Card>
                         </Col>
-                        <Col span={8} style={{ marginBottom: "1%" }}>
+                        <Col style={{ marginBottom: "1%" }}>
                             <Card
                                 style={{ width: 200 }}
                                 cover={<img alt="example" src={foodImage} />}
@@ -204,7 +233,7 @@ const Dashboard = () => {
                                 />
                             </Card>
                         </Col>
-                        <Col span={8} style={{ marginBottom: "1%" }}>
+                        <Col style={{ marginBottom: "1%" }}>
                             <Card
                                 style={{ width: 200 }}
                                 cover={<img alt="example" src={foodImage} />}
@@ -216,7 +245,7 @@ const Dashboard = () => {
                                 />
                             </Card>
                         </Col>
-                        <Col span={8} style={{ marginBottom: "1%" }}>
+                        <Col style={{ marginBottom: "1%" }}>
                             <Card
                                 style={{ width: 200 }}
                                 cover={<img alt="example" src={foodImage} />}
@@ -228,7 +257,7 @@ const Dashboard = () => {
                                 />
                             </Card>
                         </Col>
-                        <Col span={8} style={{ marginBottom: "1%" }}>
+                        <Col style={{ marginBottom: "1%" }}>
                             <Card
                                 style={{ width: 200 }}
                                 cover={<img alt="example" src={foodImage} />}
@@ -240,7 +269,7 @@ const Dashboard = () => {
                                 />
                             </Card>
                         </Col>
-                        <Col span={8} style={{ marginBottom: "1%" }}>
+                        <Col style={{ marginBottom: "1%" }}>
                             <Card
                                 style={{ width: 200 }}
                                 cover={<img alt="example" src={foodImage} />}
@@ -252,7 +281,7 @@ const Dashboard = () => {
                                 />
                             </Card>
                         </Col>
-                        <Col span={8} style={{ marginBottom: "1%" }}>
+                        <Col style={{ marginBottom: "1%" }}>
                             <Card
                                 style={{ width: 200 }}
                                 cover={<img alt="example" src={foodImage} />}
@@ -264,7 +293,7 @@ const Dashboard = () => {
                                 />
                             </Card>
                         </Col>
-                        <Col span={8} style={{ marginBottom: "1%" }}>
+                        <Col style={{ marginBottom: "1%" }}>
                             <Card
                                 style={{ width: 200 }}
                                 cover={<img alt="example" src={foodImage} />}
@@ -276,7 +305,7 @@ const Dashboard = () => {
                                 />
                             </Card>
                         </Col>
-                        <Col span={8} style={{ marginBottom: "1%" }}>
+                        <Col style={{ marginBottom: "1%" }}>
                             <Card
                                 style={{ width: 200 }}
                                 cover={<img alt="example" src={foodImage} />}
@@ -317,18 +346,14 @@ const Dashboard = () => {
                             }} >
 
                                 <div >
-                                    <div >
-                                        <span>120 MMK</span>
-                                    </div>
+                                    <span>120 MMK</span>
                                 </div>
-                                <div >
-                                    <div>
+                                <div>
 
-                                        <Button type="primary" shape="circle" icon={<PlusOutlined />} size="small" />
-                                        <span > 1 </span>
-                                        <Button type="primary" shape="circle" icon={<MinusOutlined />} size="small" />
+                                    <Button  shape="circle" icon={<PlusOutlined />} size="small" />
+                                    <span > 1 </span>
+                                    <Button shape="circle" icon={<MinusOutlined />} size="small" />
 
-                                    </div>
                                 </div>
 
                             </Space>
@@ -355,7 +380,7 @@ const Dashboard = () => {
                             </div>
                         </Space>
                         <Space direction="horizontal" style={{
-                            margin: "2%", overflow: 'auto', display: "flex", justifyContent: "space-between"
+                            margin: "0 2%", overflow: 'auto', display: "flex", justifyContent: "space-between"
                         }} >
 
                             <div >
@@ -370,21 +395,17 @@ const Dashboard = () => {
                             </div>
                         </Space>
                         <Space direction="horizontal" style={{
-                            margin: "2%", overflow: 'auto', display: "flex", justifyContent: "space-between"
+                            margin: "0 2%", overflow: 'auto', display: "flex", justifyContent: "space-between"
                         }} >
 
                             <h1>Total</h1>
-                                <div>
-                                    <span >1234 MMK</span>
-                                </div>
+                            <div>
+                                <span >1234 MMK</span>
+                            </div>
                         </Space>
-                        <div>
-                        <Button>Buy</Button>
-                        </div>
-                        <div>
-                        <Button>Buy</Button>
-                        </div>
-                        <Button>Buy</Button>
+                        <Button  htmlType="submit" className="login-form-button buttonColor">
+                        Buy
+                        </Button>
 
                     </List>
                 </Sider>
